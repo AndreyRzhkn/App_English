@@ -7,9 +7,9 @@ class Main {
     this.container = document.querySelector(".container");
     console.log(this.mainWrapper);
     this.container.append(this.mainWrapper);
-   }
+  }
 
-  onRenderMainCards() {
+  onRenderMainCards(mode) {
     for (let i = 0; i < cards[0].length; i++) {
       const card = createElem("div", "main-card");
       const title = createElem("h2", "main-card-title");
@@ -19,9 +19,13 @@ class Main {
 
       title.addEventListener("click", () => {
         this.mainWrapper.remove();
-        this.train = new Train();
-        this.train.init(i)
-        console.log(i);
+        // if (mode === "train") {
+          this.train = new Train();
+          this.train.init(i);
+        // }
+        // this.play = new Play();
+        // this.play.init(i);
+        // console.log(i);
       });
     }
   }

@@ -3,7 +3,7 @@ import Main from "../main/main";
 class View {
   constructor() {
     this.container = document.querySelector('.container')
-    this.main = new Main(this.containe);
+    this.main = new Main();
   }
   init() {
     this.main.init();
