@@ -1,5 +1,5 @@
-import cards from "./src/js/data/cards"
-const container = document.getElementByClass('.container')
+import cards from "./js/data/cards"
+// const container = document.getElementByClass('.container')
 
 const createElem = (tag, className) => {
     const elemment = document.createElement(tag)
@@ -33,6 +33,7 @@ console.log(cards)
 
 class MainPage {
     render () {
+        console.log('a')
         this.renderCard = this.cards.filter((_, index) => index == 0).foreach(component => createMainCard(component)) 
     }
     init () {

@@ -1,52 +1,42 @@
 {
-  "name": "app_english",
+  "name": "virtual-keyboard",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "webpack --mode development",
-    "prod": "webpack --mode production",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AndreyRzhkn/App_English.git"
-  },
-  "author": "Andrey Rozhkin <@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AndreyRzhkn/App_English/issues"
-  },
-  "homepage": "https://github.com/AndreyRzhkn/App_English#readme",
+  "description": "My first project",
+  "main": "main.js",
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
-    "babel-jest": "^25.5.1",
-    "bootstrap": "^4.6.1",
-    "fetch-mock": "^9.5.0",
-    "jquery": "^3.5.0",
-    "node-fetch": "^2.6.0",
-    "popper.js": "^1.16.1",
-    "swiper": "^5.3.8",
+    "install": "^0.13.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/node": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.5.3",
+    "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-loader": "^3.0.3",
-    "eslint-plugin-import": "^2.20.2",
-    "html-webpack-plugin": "^4.3.0",
-    "jest": "^26.0.1",
-    "jest-fetch-mock": "^3.0.3",
-    "mini-css-extract-plugin": "^0.9.0",
-    "style-loader": "^1.2.1"
-  }
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "html-webpack-plugin": "^4.0.2",
+    "style-loader": "^1.1.3"
+  },
+  "scripts": {
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BozorgVlad/codejam-virtual-keyboard.git"
+  },
+  "author": "BozorgVlad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BozorgVlad/codejam-virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/BozorgVlad/codejam-virtual-keyboard#readme"
 }
