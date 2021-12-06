@@ -6,7 +6,7 @@ view.init()
 
 
 
-
+console.log('Andrey')
 
 
 

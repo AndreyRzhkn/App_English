@@ -17,7 +17,8 @@
         height: 3000px;
     }
 }
-li, a {
+
+li {
     margin: 75px 0 -55px 0;
     color: #03A9F4;
     font: 14pt "Roboto", sans-serif;
@@ -28,24 +29,10 @@ li, a {
     list-style: none;
     outline: 0;
     display: none;
-}
-li {
     width: 230px;
-    text-indent: 56px;}
-a:focus {
-    display: block;
-    color: #333;
-    background-color: #eee;
-    transition: all .5s;
+    text-indent: 56px;
+    cursor: pointer;
 }
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(238, 238, 196);
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-}
-
 #trigger, #burger, #burger:before, #burger:after {
     position: absolute;
     top: 25px;
@@ -76,7 +63,6 @@ html, body {
     transform: rotate(180deg);
     transition: transform .2s ease;
 }
-
 #menu-toggle:checked + #trigger + #burger:before {
     width: 20px;
     top: -2px;
@@ -110,6 +96,4 @@ html, body {
 }
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
     display: none;
-}
-
-/* swither*/
+} 

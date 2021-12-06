@@ -1,0 +1,41 @@
+.play-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.play-cards-block {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1600px;
+    flex-wrap: wrap;
+}
+.play-card {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+}
+.play-card img{
+    width: 100%;
+}
+.play-button {
+    width: 600px;
+    height: 120px;
+    background-color: green;
+    border-radius: 25px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.play-button-revers {
+    width: 120px;
+    height: 120px;
+    background-color: green;
+    border-radius: 50%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

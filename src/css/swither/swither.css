@@ -1,0 +1,44 @@
+.toggle_radio {
+    display: inline-block;
+    background: #555;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 50px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+  }
+  .toggle_radio > * {
+    float: left;
+  }
+  .toggle_radio input[type=radio] {
+    display: none;
+  }
+  .toggle_radio label {
+    z-index: 0;
+    display: block;
+    width: 70px;
+    height: 100%;
+    margin: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+  }
+  .toggle_option_slider{
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 50px;
+    background: rgba(255,255,255,.3);
+    transition: all .2s ease-in;
+  }
+  #first_toggle:checked ~ .toggle_option_slider{
+    left: 0;
+  }
+  #second_toggle:checked ~ .toggle_option_slider{
+    left: 70px;
+  } 
