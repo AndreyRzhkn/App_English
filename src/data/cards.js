@@ -1,5 +1,5 @@
 const cards = [ 
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Fruits', 'School'],
   [
     {
       word: 'cry',
@@ -298,6 +298,106 @@ const cards = [
       translation: 'смех',
       image: 'img/laugh.jpg',
       audioSrc: 'audio/laugh.mp3'
+    }
+  ],
+  [
+    {
+      word: 'banana',
+      translation: 'банан',
+      image: 'img/banana.jpg',
+      audioSrc: 'audio/banana.mp3'
+    },
+    {
+      word: 'orange',
+      translation: 'апельсин',
+      image: 'img/orange.jpg',
+      audioSrc: 'audio/orange.mp3'
+    },
+    {
+      word: 'lemon',
+      translation: 'лимон',
+      image: 'img/lemon.jpg',
+      audioSrc: 'audio/lemon.mp3'
+    },
+    {
+      word: 'grape',
+      translation: 'виноград',
+      image: 'img/grape.jpg',
+      audioSrc: 'audio/grape.mp3'
+    },
+    {
+      word: 'kiwi',
+      translation: 'киви',
+      image: 'img/kiwi.jpg',
+      audioSrc: 'audio/kiwi.mp3'
+    },
+    {
+      word: 'apple',
+      translation: 'яблоко',
+      image: 'img/apple.jpg',
+      audioSrc: 'audio/apple.mp3'
+    },
+    {
+      word: 'pear',
+      translation: 'груша',
+      image: 'img/pear.jpg',
+      audioSrc: 'audio/pear.mp3'
+    },
+    {
+      word: 'ananas',
+      translation: 'ананас',
+      image: 'img/ananas.jpg',
+      audioSrc: 'audio/ananas.mp3'
+    }
+  ],
+  [
+    {
+      word: 'pencil',
+      translation: 'карандаш',
+      image: 'img/pencil.jpg',
+      audioSrc: 'audio/pencil.mp3'
+    },
+    {
+      word: 'pen',
+      translation: 'ручка',
+      image: 'img/pen.jpg',
+      audioSrc: 'audio/pen.mp3'
+    },
+    {
+      word: 'backpack',
+      translation: 'рюкзак',
+      image: 'img/backpack.jpg',
+      audioSrc: 'audio/backpack.mp3'
+    },
+    {
+      word: 'notebook',
+      translation: 'тетрадь',
+      image: 'img/notebook.jpg',
+      audioSrc: 'audio/notebook.mp3'
+    },
+    {
+      word: 'ruler',
+      translation: 'линейка',
+      image: 'img/ruler.jpg',
+      audioSrc: 'audio/ruler.mp3'
+    },
+    {
+      word: 'divider',
+      translation: 'циркуль',
+      image: 'img/divider.jpg',
+      audioSrc: 'audio/divider.mp3'
+    },
+    {
+      word: 'rubber',
+      translation: 'ластик',
+      image: 'img/rubber.jpg',
+      audioSrc: 'audio/rubber.mp3'
+    },
+    {
+      word: 'scissors',
+      translation: 'ножницы',
+      image: 'img/scissors.jpg',
+      audioSrc: 'audio/scissors.mp3'
     }
   ]
 ]

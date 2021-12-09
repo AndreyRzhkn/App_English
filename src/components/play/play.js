@@ -1,19 +1,13 @@
 import cards from "../../data/cards";
 import { createElem } from "../../helpers/helpFunctions";
-import Train from "../train/train";
-import Burger from "../burger/burger";
-import Swither from "../swither/swither";
+
+
 
 
 class Play {
     constructor () {
       this.playWrapper = createElem('div', 'play-wrapper')
       container.append(this.playWrapper)    
-      // this.swither = new Swither()
-      // this.mainWrapper.append(this.swither)
-  
-      // this.mainHeader = createElem('div', 'main-header')
-      // this.mainWrapper.append(this.mainHeader)
       this.playCardsBlock = createElem('div', 'play-cards-block')
       this.playWrapper.append(this.playCardsBlock)
   
@@ -48,3 +42,5 @@ class Play {
       this.onRenderPlayButton (n)
     }
   }
+
+export default Play

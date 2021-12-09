@@ -1,3 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 50px 20px 0px 20px; */
+}
+
+/* burger */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
 @keyframes checked-anim {
@@ -17,7 +33,7 @@
         height: 3000px;
     }
 }
-li, a {
+li {
     margin: 75px 0 -55px 0;
     color: #03A9F4;
     font: 14pt "Roboto", sans-serif;
@@ -28,22 +44,9 @@ li, a {
     list-style: none;
     outline: 0;
     display: none;
-}
-li {
     width: 230px;
-    text-indent: 56px;}
-a:focus {
-    display: block;
-    color: #333;
-    background-color: #eee;
-    transition: all .5s;
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(238, 238, 196);
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
+    text-indent: 56px;
+    cursor: pointer;
 }
 
 #trigger, #burger, #burger:before, #burger:after {
@@ -112,4 +115,197 @@ html, body {
     display: none;
 }
 
+/* main */
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1600px;
+}
+.main-cards-block {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1600px;
+    flex-wrap: wrap;
+}
+.main-card {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: 20px auto ;
+    border: 1px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.main-card img {
+    width: 300px;
+    height: 200px;
+}
+.main-title {
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0px 0px 0px ;
+}
+.main-header {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
 /* swither*/
+
+.toggle_radio {
+    display: inline-block;
+    background: #555;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 50px;
+    position: relative;
+    top: 50px;
+    right: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+  }
+  .toggle_radio > * {
+    float: left;
+  }
+  .toggle_radio input[type=radio] {
+    display: none;
+  }
+  .toggle_radio label {
+    z-index: 0;
+    display: block;
+    width: 70px;
+    height: 100%;
+    margin: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+  }
+  .toggle_option_slider{
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 50px;
+    background: rgba(255,255,255,.3);
+    transition: all .2s ease-in;
+  }
+  #first_toggle:checked ~ .toggle_option_slider{
+    left: 0;
+  }
+  #second_toggle:checked ~ .toggle_option_slider{
+    left: 70px;
+  } 
+
+  /* train */
+
+.train-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.cards-block {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1600px;
+    flex-wrap: wrap;
+}
+.flip-card{
+    cursor: pointer;
+    position: relative; 
+    margin: auto 20px; 
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 20px;
+}
+.flip {
+    transform: rotateY(180deg);  
+}
+.back,.face{
+    text-align: center;
+    width:300px;
+    height:300px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px auto ;
+    backface-visibility: hidden;
+}
+.face{
+    transform: rotateY(180deg);
+}
+.back{
+    transform: rotateY(0deg);
+    position: absolute;     
+}
+.face img {
+    width: 100%;
+}
+.back img {
+    width: 100%;
+    height: 200px;
+}
+.title-block img{
+    width: 40px;
+    height: 100%;
+}
+.title-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flip-card-title-front, .flip-card-title-back {
+    font-size: 30px;
+} 
+  /* play */
+
+  .play-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.play-cards-block {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1600px;
+    flex-wrap: wrap;
+}
+.play-card {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+}
+.play-card img{
+    width: 100%;
+}
+.play-button {
+    width: 600px;
+    height: 120px;
+    background-color: green;
+    border-radius: 25px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.play-button-revers {
+    width: 120px;
+    height: 120px;
+    background-color: green;
+    border-radius: 50%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
