@@ -1,5 +1,5 @@
 export const createElem = (tag, className) => {
-    const elemment = document.createElement(tag)
-    elemment.classList.add(className)
-    return elemment
-}
+  const elemment = document.createElement(tag);
+  className ? elemment.classList.add(className) : null; // added checking for bug : class = 'undefiend'
+  return elemment;
+};
