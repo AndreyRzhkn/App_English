@@ -3,5 +3,3 @@ const createElem = (tag, className = null) => {
     elemment.classList.add(className)
     return elemment
   }
-
-const container = document.querySelector('.container')

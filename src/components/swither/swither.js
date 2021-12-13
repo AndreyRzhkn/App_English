@@ -1,48 +1,93 @@
 import { createElem } from "../../helpers/helpFunctions";
+import Train from "../train/train";
+import Play from "../play/play";
 
+// class Swither {
+//   constructor() {
+//     this.container = document.querySelector(".container");
+//     this.swither = createElem("div", "toggle_radio");
+//     this.inputf = createElem("input", "toggle_option");
+//     this.labelf = createElem("label");
+//     this.inputs = createElem("input", "toggle_option");
+//     this.labels = createElem("label");
+//     this.options = createElem("div");
+//     this.container.append(this.swither);
+//   }
+//   createInputF() {
+//     this.inputf.type = "radio";
+//     this.inputf.id = "first_toggle";
+//     this.inputf.name = "toggle_option";
+//     this.swither.append(this.inputf);
+//   }
+//   createLabelF() {
+//     this.labelf.innerHTML = "Train";
+//     this.labelf.htmlFor = "first_toggle";
+//     this.swither.append(this.labelf);
+//   }
+//   createInputS() {
+//     this.inputs.type = "radio";
+//     this.inputs.id = "second_toggle";
+//     this.inputs.name = "toggle_option";
+//     this.swither.append(this.inputs);
+//   }
+//   createLabelS() {
+//     this.labels.innerHTML = "Play";
+//     this.labels.htmlFor = "second_toggle";
+//     this.swither.append(this.labels);
+//   }
+//   createOptions() {
+//     this.options.className = "toggle_option_slider";
+//     this.swither.append(this.options);
+//   }
+//   init() {
+//     this.createInputF();
+//     this.createLabelF();
+//     this.createInputS();
+//     this.createLabelS();
+//     this.createOptions();
+//   }
+// }
 class Swither {
-  constructor() {
-    this.container = document.querySelector(".container");
-    this.swither = createElem("div", "toggle_radio");
-    this.inputf = createElem("input", "toggle_option");
-    this.labelf = createElem("label");
-    this.inputs = createElem("input", "toggle_option");
-    this.labels = createElem("label");
-    this.options = createElem("div");
+  constructor () {
+    this.container = document.querySelector('.container');
+    this.swither = createElem("div", "switch-container");
+    this.label = createElem("label", "switch");
+    this.input = createElem("input", "switch-input");
+    this.spanF = createElem("span", "switch-label");
+    this.spanS = createElem("span", "switch-handle")
     this.container.append(this.swither);
   }
-  createInputF() {
-    this.inputf.type = "radio";
-    this.inputf.id = "first_toggle";
-    this.inputf.name = "toggle_option";
-    this.swither.append(this.inputf);
+  createLabel () {
+    this.swither.append(this.label);
   }
-  createLabelF() {
-    this.labelf.innerHTML = "Train";
-    this.labelf.htmlFor = "first_toggle";
-    this.swither.append(this.labelf);
+  createInput () {
+    this.input.type = "checkbox";
+    this.input.setAttribute("checked", true);
+    this.label.append(this.input);
   }
-  createInputS() {
-    this.inputs.type = "radio";
-    this.inputs.id = "second_toggle";
-    this.inputs.name = "toggle_option";
-    this.swither.append(this.inputs);
+  createSpanF () {
+    this.spanF.setAttribute("data-on", "Train");
+    this.spanF.setAttribute("data-off", "Play");
+    this.label.append(this.spanF)
   }
-  createLabelS() {
-    this.labels.innerHTML = "Play";
-    this.labels.htmlFor = "second_toggle";
-    this.swither.append(this.labels);
+  createSpanS () {
+    this.label.append(this.spanS);
   }
-  createOptions() {
-    this.options.className = "toggle_option_slider";
-    this.swither.append(this.options);
+  chooseMode () {
+    this.swither.addEventListener("click", () => {
+      if(this.input.checked) {
+        this.input.setAttribute("checked", false);
+      } else if (!this.input.checked){
+        this.input.setAttribute("checked", true);  
+      }
+    })
   }
-  init() {
-    this.createInputF();
-    this.createLabelF();
-    this.createInputS();
-    this.createLabelS();
-    this.createOptions();
+  init () {
+    this.createLabel ();
+    this.createInput ();
+    this.createSpanF ();
+    this.createSpanS ();
+    this.chooseMode ();
   }
 }
 
@@ -54,8 +99,7 @@ export default Swither;
 // <label class="switch">
 //     <input type="checkbox" class="switch-input" checked>
 //     <span class="switch-label" data-on="Train" data-off="Play"></span>
-//     <span class="switch-handle">
-//     </span>
+//     <span class="switch-handle"></span>
 // </label>
 // </div>
 

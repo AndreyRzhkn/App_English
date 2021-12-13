@@ -6,11 +6,14 @@ import { createElem } from "../../helpers/helpFunctions";
 
 class Play {
     constructor () {
-      this.playWrapper = createElem('div', 'play-wrapper')
-      container.append(this.playWrapper)    
+      this.container = document.querySelector('.container')
+      this.playWrapper = createElem('div', 'play-wrapper')   
       this.playCardsBlock = createElem('div', 'play-cards-block')
+      
+      this.container.insertBefore(this.playWrapper, this.swither)
+    }
+    createCardsBlock () {
       this.playWrapper.append(this.playCardsBlock)
-  
     }
     onRenderPlayCards(n) {
       for(let i = 0; i < cards[n].length; i++){
@@ -22,7 +25,7 @@ class Play {
         cardPlay.append(imgPlay)
       }
     }
-    onRenderPlayButton (n) {
+    onRenderPlayButton () {
       const playButton = createElem('div', 'play-button')
       this.playWrapper.append(playButton)
       
@@ -38,8 +41,9 @@ class Play {
       })
     }
     init(n) {
+      this.createCardsBlock ()
       this.onRenderPlayCards(n)
-      this.onRenderPlayButton (n)
+      this.onRenderPlayButton ()
     }
   }
 

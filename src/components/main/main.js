@@ -1,5 +1,6 @@
 import cards from "../../data/cards";
 import { createElem } from "../../helpers/helpFunctions";
+import Play from "../play/play";
 import Train from "../train/train";
 
 
@@ -8,8 +9,10 @@ class Main {
     this.container = document.querySelector(".container");
     this.mainWrapper = createElem("div", "main-wrapper");
     this.container.append(this.mainWrapper);
+
+    this.swither = document.querySelector(".switch-input");
   }
-  onRenderMainCards(mode) {
+  onRenderMainCards() {
     for (let i = 0; i < cards[0].length; i++) {
       this.card = createElem("div", "main-card");
 
@@ -28,7 +31,25 @@ class Main {
         this.train = new Train()
         this.train.init(i + 1)
       })
-      
+      // this.card.addEventListener('click', () => {
+      //   this.mainWrapper.remove();
+      //   this.train = new Train()
+      //   this.train.init(i + 1)
+      // })
+
+      this.card.addEventListener('click', () => {
+        
+        if(this.swither.hasAttribute(checked)){
+          this.mainWrapper.remove();
+          this.train = new Train()
+          this.train.init(i + 1)
+        } else {
+          this.mainWrapper.remove();
+          this.play = new Play()
+          this.play.init(i + 1)
+        }
+        
+      })
 
 
       // title.addEventListener("click", () => {
@@ -42,6 +63,7 @@ class Main {
         // this.play.init(i);
       // });
     }
+    
   }
 
   init() {

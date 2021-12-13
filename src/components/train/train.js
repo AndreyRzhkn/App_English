@@ -1,15 +1,20 @@
 import cards from "../../data/cards";
 import { createElem } from "../../helpers/helpFunctions";
+import Play from "../play/play";
 
 
 
 class Train{
   constructor () {
-    this.container = document.querySelector('.container')
-    this.trainWrapper = createElem('div', 'train-wrapper')
-    this.cardsBlock = createElem('div', 'cards-block')
-    this.trainWrapper.append(this.cardsBlock) 
-    this.container.append(this.trainWrapper)
+    this.container = document.querySelector('.container');
+    this.swither = document.querySelector('.switch-container');
+    
+    this.trainWrapper = createElem('div', 'train-wrapper');
+    this.cardsBlock = createElem('div', 'cards-block');
+    this.trainWrapper.append(this.cardsBlock) ;
+    this.container.insertBefore(this.trainWrapper, this.swither);
+
+    this.swither = document.querySelector(".switch-input")
   }
   onRenderTrainCards(n) {
     for(let i = 0; i < cards[n].length; i++){
@@ -52,11 +57,21 @@ class Train{
      
       audio.src = `./src/${cards[n][i].audioSrc}`
       imgFront.addEventListener('click', () => audio.play())
+
+      cardFlip.addEventListener("click", () => {
+        if(this.swither.checked) {
+          this.trainWrapper.remove()
+          this.play = new Play ()
+          this.play.init(n)
+        }
+      })
     }
   }
+
   init(n) {
     this.onRenderTrainCards(n)
   }
 }
+
 
 export default Train;
