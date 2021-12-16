@@ -86,15 +86,15 @@ class Burger {
     this.burger.append(this.mainA)
   }
 
-  createSpun () {
+  createSpun() {
     this.mainA.append(this.spun)
   }
 
-  createNav () {
+  createNav() {
     this.burger.append(this.nav)
   }
 
-  createListA () {
+  createListA() {
     for(let i = 0; i < cards[0].length; i++){
       this.listA = createElem("a", "burger-menu_link")
       this.listA.innerHTML = cards[0][i]

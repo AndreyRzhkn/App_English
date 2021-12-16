@@ -48,46 +48,46 @@ import Play from "../play/play";
 //   }
 // }
 class Swither {
-  constructor () {
-    this.container = document.querySelector('.container');
+  constructor() {
+    this.container = document.querySelector(".container");
     this.swither = createElem("div", "switch-container");
     this.label = createElem("label", "switch");
     this.input = createElem("input", "switch-input");
     this.spanF = createElem("span", "switch-label");
-    this.spanS = createElem("span", "switch-handle")
+    this.spanS = createElem("span", "switch-handle");
     this.container.append(this.swither);
   }
-  createLabel () {
+  createLabel() {
     this.swither.append(this.label);
   }
-  createInput () {
+  createInput() {
     this.input.type = "checkbox";
     this.input.setAttribute("checked", true);
     this.label.append(this.input);
   }
-  createSpanF () {
+  createSpanF() {
     this.spanF.setAttribute("data-on", "Train");
     this.spanF.setAttribute("data-off", "Play");
-    this.label.append(this.spanF)
+    this.label.append(this.spanF);
   }
-  createSpanS () {
+  createSpanS() {
     this.label.append(this.spanS);
   }
-  chooseMode () {
+  chooseMode() {
     this.swither.addEventListener("click", () => {
-      if(this.input.checked) {
+      if (this.input.checked) {
         this.input.setAttribute("checked", false);
-      } else if (!this.input.checked){
-        this.input.setAttribute("checked", true);  
+      } else if (!this.input.checked) {
+        this.input.setAttribute("checked", true);
       }
-    })
+    });
   }
-  init () {
-    this.createLabel ();
-    this.createInput ();
-    this.createSpanF ();
-    this.createSpanS ();
-    this.chooseMode ();
+  init() {
+    this.createLabel();
+    this.createInput();
+    this.createSpanF();
+    this.createSpanS();
+    this.chooseMode();
   }
 }
 
@@ -231,10 +231,10 @@ export default Swither;
 
 // //  renderEveryCards() {
 //   for (let x = 0; x < cards.lengish; x += 1) {
-//  //   for current card we need cyclie - i 
+//  //   for current card we need cyclie - i
 
-      // ------ >  wrapper.remove()
-      
+// ------ >  wrapper.remove()
+
 //             if (this.switcher.checked) {
 //                 train . init()
 //             } else if (!this.switcher.checked) {
