@@ -1,6 +1,7 @@
 import cards from "../../data/cards";
 import { createElem } from "../../helpers/helpFunctions";
 import Play from "../play/play";
+import Swither from "../swither/swither";
 import Train from "../train/train";
 
 
@@ -8,9 +9,12 @@ class Main {
   constructor() {
     this.container = document.querySelector(".container");
     this.mainWrapper = createElem("div", "main-wrapper");
-    this.container.append(this.mainWrapper);
+    // this.container.append(this.mainWrapper);    
 
-    this.swither = document.querySelector(".switch-input");
+    this.container.insertBefore(this.mainWrapper, this.swither);
+
+    this.swither = document.querySelector(".switch-input")  ;
+    console.log(this.swither);
   }
   onRenderMainCards() {
     for (let i = 0; i < cards[0].length; i++) {
@@ -28,40 +32,21 @@ class Main {
 
       this.card.addEventListener('click', () => {
         this.mainWrapper.remove();
-        this.train = new Train()
+        this.train = new Play()
         this.train.init(i + 1)
       })
       // this.card.addEventListener('click', () => {
-      //   this.mainWrapper.remove();
-      //   this.train = new Train()
-      //   this.train.init(i + 1)
+        
+      //   if(this.swither.checked){
+      //     this.mainWrapper.remove();
+      //     this.train = new Train()
+      //     this.train.init(i + 1)
+      //   } else {
+      //     this.mainWrapper.remove();
+      //     this.play = new Play()
+      //     this.play.init(i + 1)
+      //   }   
       // })
-
-      this.card.addEventListener('click', () => {
-        
-        if(this.swither.hasAttribute(checked)){
-          this.mainWrapper.remove();
-          this.train = new Train()
-          this.train.init(i + 1)
-        } else {
-          this.mainWrapper.remove();
-          this.play = new Play()
-          this.play.init(i + 1)
-        }
-        
-      })
-
-
-      // title.addEventListener("click", () => {
-      //   this.mainWrapper.remove();
-        // if (mode === "train") {
-          // this.train = new Train();
-          // this.train.init(i);
-          
-        // }
-        // this.play = new Play();
-        // this.play.init(i);
-      // });
     }
     
   }

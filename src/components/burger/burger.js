@@ -1,6 +1,7 @@
 import { createElem } from "../../helpers/helpFunctions";
 import cards from "../../data/cards";
 import Train from "../train/train";
+import Main from "../main/main";
 const $ = require( "jquery" );
 
 
@@ -75,50 +76,70 @@ class Burger {
     this.burger = createElem("div", "burger-menu");
     this.mainA = createElem("a", "burger-menu_button")
     this.spun = createElem("spun", "burger-menu_lines");
-    this.nav = createElem("nav", "burger-menu_nav")
-    this.burgerOver = createElem("div", "burger-menu_overlay")
-    this.section = createElem("section")
-
+    this.nav = createElem("nav", "burger-menu_nav");
+    this.burgerOver = createElem("div", "burger-menu_overlay");
+    this.section = createElem("section");
+ 
     this.container.append(this.burger);
   }
   
-  createMainA () {
-    this.burger.append(this.mainA)
-  }
+  createMainA() {
+    this.burger.append(this.mainA);
+  };
 
-  createSpun () {
-    this.mainA.append(this.spun)
-  }
+  createSpun() {
+    this.mainA.append(this.spun);
+  };
 
-  createNav () {
-    this.burger.append(this.nav)
-  }
+  createNav() {
+    this.burger.append(this.nav);
+  };
 
-  createListA () {
+  createMainPage() {
+    this.mainPage = createElem("a", "burger-menu_link");
+    this.mainPage.innerHTML = "Main page";
+    this.nav.append(this.mainPage);
+    this.mainPage.addEventListener("click", () => {
+      this.main = document.querySelector(".main-wrapper");
+      this.train = document.querySelector(".train-wrapper");
+      this.play = document.querySelector(".play-wrapper");
+      if(this.train){
+        this.train.remove();
+        this.main = new Main();
+        this.main.init();
+      }else if(this.play){
+        this.play.remove();
+        this.main = new Main();
+        this.main.init();
+      }
+    })
+  };
+
+  createListA() {
     for(let i = 0; i < cards[0].length; i++){
-      this.listA = createElem("a", "burger-menu_link")
-      this.listA.innerHTML = cards[0][i]
-      this.nav.append(this.listA)
+      this.listA = createElem("a", "burger-menu_link");
+      this.listA.innerHTML = cards[0][i];
+      this.nav.append(this.listA);
       this.listA.addEventListener("click", () => {
-        this.main = document.querySelector(".main-wrapper")
-        this.train = document.querySelector(".train-wrapper")
-        this.newTrain = new Train()
+        this.main = document.querySelector(".main-wrapper");
+        this.train = document.querySelector(".train-wrapper");
+        this.newTrain = new Train();
         if(this.main){
-          this.main.remove()
-          this.newTrain.init(i + 1) 
+          this.main.remove();
+          this.newTrain.init(i + 1) ;
         }else{
-          this.train.remove()
-          this.newTrain.init(i + 1)
+          this.train.remove();
+          this.newTrain.init(i + 1);
         }
       })
     }
+  };
+
+  createBurgerOver() {
+    this.burger.append(this.burgerOver);
   }
 
-  createBurgerOver () {
-    this.burger.append(this.burgerOver)
-  }
-
-  burgerMenu () {
+  burgerMenu() {
     let menu = $('.burger-menu');
     let button = menu.find('.burger-menu_button', '.burger-menu_lines');
     let links = menu.find('.burger-menu_link');
@@ -141,37 +162,16 @@ class Burger {
         $('body').css('overlow', 'visible');
       }
     }
-  //   const menu = document.querySelector('.burger-menu');
-  //   const button = menu.querySelectorAll('.burger-menu_lines');
-  //   const links = menu.querySelectorAll('.burger-menu_link');
-  //   const overlay = menu.querySelectorAll('.burger-menu_overlay');
-  //   console.log(links)
-  //   console.log(button)
-  //   button.addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     toggleMenu()
-  //   })
-  //   links.addEventListener('click', toggleMenu());
-  //   overlay.addEventListener('click', toggleMenu());
+  };
 
-  //   function toggleMenu() {
-  //     menu.classList.toggle('burger-menu_active');
-
-  //     if(menu.classList.contains('burger-menu_active')) {
-  //       this.container.style.overflow = "hidden";
-  //     } else {
-  //       this.container.style.overflow = "visible";
-  //     }
-  //   }
-  }
-
-  init () {
-    this.createMainA ();
-    this.createSpun ();
-    this.createNav ();
-    this.createListA ();
-    this.createBurgerOver ();
-    this.burgerMenu ()
+  init() {
+    this.createMainA();
+    this.createSpun();
+    this.createMainPage();
+    this.createNav();
+    this.createListA();
+    this.createBurgerOver();
+    this.burgerMenu();
   }
 }
 

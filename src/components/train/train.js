@@ -58,13 +58,13 @@ class Train{
       audio.src = `./src/${cards[n][i].audioSrc}`
       imgFront.addEventListener('click', () => audio.play())
 
-      cardFlip.addEventListener("click", () => {
-        if(this.swither.checked) {
-          this.trainWrapper.remove()
-          this.play = new Play ()
-          this.play.init(n)
-        }
-      })
+      // cardFlip.addEventListener("click", () => {
+      //   if(this.swither.checked) {
+      //     this.trainWrapper.remove()
+      //     this.play = new Play ()
+      //     this.play.init(n)
+      //   }
+      // })
     }
   }
 

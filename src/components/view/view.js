@@ -5,15 +5,24 @@ import Swither from "../swither/swither";
 
 class View {
   constructor() {
-    this.container = document.querySelector('.container')
-    this.burger = new Burger()
+    this.container = document.querySelector('.container');
+
+    this.burger = new Burger();
     this.main = new Main();
-    this.swither = new Swither()
-  }
+    this.swither = new Swither();
+
+
+
+
+  };
   init() {
-    this.burger.init()
+    this.swither.init();
+    this.burger.init();
     this.main.init();
-    this.swither.init()
+         
+    this.swither = document.querySelector(".switch-input")  ;
+    console.log(this.swither);
+
   }
 }
 export default View;
