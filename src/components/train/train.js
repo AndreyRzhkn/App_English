@@ -15,29 +15,28 @@ class Train{
     this.container.insertBefore(this.trainWrapper, this.swither);
 
     this.swither = document.querySelector(".switch-input")
+    console.log(this.swither)
   }
   onRenderTrainCards(n) {
     for(let i = 0; i < cards[n].length; i++){
       const cardFlip = createElem('div', 'flip-card')
+
       cardFlip.classList.add('cardClick')
 
       const cardFront = createElem('div', 'back')
       const cardBack = createElem('div', 'face')
-      cardFlip.append(cardFront)
-      cardFlip.append(cardBack)
-
       const imgFront = createElem('img')
+
       imgFront.src = `./src/${cards[n][i].image}`
-      cardFront.append(imgFront) 
-      console.log(imgFront.src)
+      
       const titleBlock = createElem('div', 'title-block')
       const titleFront = createElem('div', 'flip-card-title-front')
-      titleBlock.append(titleFront)
-      cardFront.append(titleBlock)
+      
       titleFront.innerHTML = cards[n][i].word
+
       const titlePic = createElem('img')
       titlePic.src = './src/img/revers.jpg'
-      titleBlock.append(titlePic)
+      
       
       titlePic.addEventListener('click', () => {
         cardFlip.classList.toggle('flip')
@@ -46,25 +45,23 @@ class Train{
       
       const imgBack = createElem('img')
       imgBack.src = `./src/${cards[n][i].image}`
-      cardBack.append(imgBack)
+      
       const titleBack = createElem('div', 'flip-card-title-back')
       titleBack.innerHTML = cards[n][i].translation
+      
+      cardFront.append(imgFront)
+      titleBlock.append(titleFront)
+      cardFront.append(titleBlock)
+      titleBlock.append(titlePic)
+      cardBack.append(imgBack)
       cardBack.append(titleBack)
-
+      cardFlip.append(cardFront)
+      cardFlip.append(cardBack)
       this.cardsBlock.append(cardFlip)
 
       const audio = new Audio()
-     
       audio.src = `./src/${cards[n][i].audioSrc}`
       imgFront.addEventListener('click', () => audio.play())
-
-      // cardFlip.addEventListener("click", () => {
-      //   if(this.swither.checked) {
-      //     this.trainWrapper.remove()
-      //     this.play = new Play ()
-      //     this.play.init(n)
-      //   }
-      // })
     }
   }
 
