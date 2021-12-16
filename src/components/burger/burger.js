@@ -64,7 +64,6 @@ class Burger {
     this.burger.append(this.nav)
   }
 
-
   createListA() {
     for(let i = 0; i < cards[0].length; i++){
       this.listA = createElem("a", "burger-menu_link");

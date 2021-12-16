@@ -8,13 +8,11 @@ class Main {
     this.container = document.querySelector(".container");
     this.mainWrapper = createElem("div", "main-wrapper");
 
-    // this.container.insertBefore(this.mainWrapper, this.swither);
     this.container.append(this.mainWrapper);
-
   }
   onRenderMainCards() {
     this.swither = document.querySelector(".switch-input");
-    console.log(this.swither);
+    // console.log(this.swither);
 
     for (let i = 0; i < cards[0].length; i++) {
       this.card = createElem("div", "main-card");
@@ -27,6 +25,7 @@ class Main {
 
       this.card.append(this.img);
       this.card.append(this.title);
+      
       this.mainWrapper.append(this.card);
 
       this.card.addEventListener("click", () => {
@@ -45,6 +44,10 @@ class Main {
 
   init() {
     this.onRenderMainCards();
-  }
+    // this.renderBlock()
+  };
+
 }
+
+
 export default Main;

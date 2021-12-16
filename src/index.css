@@ -149,17 +149,17 @@ html, body {
   border: 1px solid black;
   border-radius: 15px;
   cursor: pointer;
-  background-color: rgb(197, 212, 182);
 }
-/* .main-card {
+.main-card-play {
     width: 300px;
     height: 300px;
     padding: 20px;
     margin: 20px auto ;
     border: 1px solid black;
     border-radius: 15px;
-    cursor: pointer;
-} */
+    cursor: pointer;  
+    background-color: rgb(197, 212, 182);
+}
 .main-card img {
     width: 300px;
     height: 200px;

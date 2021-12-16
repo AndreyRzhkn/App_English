@@ -1,11 +1,8 @@
 import { createElem } from "../../helpers/helpFunctions";
-import Train from "../train/train";
-import Play from "../play/play";
 
 
 class Swither {
   constructor() {
-
     this.container = document.querySelector('.container');
 
     this.swither = createElem("div", "switch-container");
@@ -13,10 +10,8 @@ class Swither {
     this.input = createElem("input", "switch-input");
     this.spanF = createElem("span", "switch-label");
     this.spanS = createElem("span", "switch-handle");
+
     this.container.append(this.swither);
-
-    
-
   }
   createLabel() {
     this.swither.append(this.label);
@@ -32,7 +27,6 @@ class Swither {
     this.spanF.setAttribute("data-on", "Train");
     this.spanF.setAttribute("data-off", "Play");
     this.label.append(this.spanF);
-    
   }
 
   createSpanS() {
@@ -46,7 +40,6 @@ class Swither {
       } else if (!this.input.checked) {
         this.input.setAttribute("checked", true);
       }
-      
     });
   }
 
