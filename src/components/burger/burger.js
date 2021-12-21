@@ -2,6 +2,8 @@ import { createElem } from "../../helpers/helpFunctions";
 import cards from "../../data/cards";
 import Train from "../train/train";
 import Main from "../main/main";
+import Swither from "../swither/swither";
+import Play from "../play/play";
 const $ = require( "jquery" );
 
 
@@ -18,7 +20,10 @@ class Burger {
     this.section = createElem("section");
  
     this.container.append(this.burger);
-  }
+    this.train = document.querySelector(".train-wrapper");
+    console.log(this.train)
+
+  };
   
   createMainA() {
     this.burger.append(this.mainA);
@@ -40,29 +45,34 @@ class Burger {
       this.main = document.querySelector(".main-wrapper");
       this.train = document.querySelector(".train-wrapper");
       this.play = document.querySelector(".play-wrapper");
+      console.log(this.train)
       if(this.train){
         this.train.remove();
         this.main = new Main();
+        this.swither = new Swither();        
+        this.swither.init();
         this.main.init();
       }else if(this.play){
         this.play.remove();
         this.main = new Main();
+        this.swither = new Swither();        
+        this.swither.init();
         this.main.init();
-      }
-    })
+      };
+    });
   };
 
   createMainA () {
-    this.burger.append(this.mainA)
-  }
+    this.burger.append(this.mainA);
+  };
 
   createSpun() {
-    this.mainA.append(this.spun)
-  }
+    this.mainA.append(this.spun);
+  };
 
   createNav() {
-    this.burger.append(this.nav)
-  }
+    this.burger.append(this.nav);
+  };
 
   createListA() {
     for(let i = 0; i < cards[0].length; i++){
@@ -72,21 +82,29 @@ class Burger {
       this.listA.addEventListener("click", () => {
         this.main = document.querySelector(".main-wrapper");
         this.train = document.querySelector(".train-wrapper");
+        this.play = document.querySelector(".play-wrapper");
+        this.swither = document.querySelector(".switch-container");
+        
         this.newTrain = new Train();
+        this.newPlay = new Play();
         if(this.main){
           this.main.remove();
-          this.newTrain.init(i + 1) ;
-        }else{
+          this.swither.remove();
+          this.newTrain.init(i + 1);
+        }else if(this.train){
           this.train.remove();
           this.newTrain.init(i + 1);
-        }
-      })
-    }
+        }else if(this.play){
+          this.play.remove();
+          this.newPlay.init(i + 1);
+        };
+      });
+    };
   };
 
   createBurgerOver() {
     this.burger.append(this.burgerOver);
-  }
+  };
 
   burgerMenu() {
     let menu = $('.burger-menu');
@@ -121,8 +139,8 @@ class Burger {
     this.createListA();
     this.createBurgerOver();
     this.burgerMenu();
-  }
-}
+  };
+};
 
 
 export default Burger;

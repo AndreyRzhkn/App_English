@@ -11,27 +11,27 @@ class Swither {
     this.spanF = createElem("span", "switch-label");
     this.spanS = createElem("span", "switch-handle");
 
-    this.container.append(this.swither);
-  }
+    this.container.appendChild(this.swither);
+  };
   createLabel() {
     this.swither.append(this.label);
-  }
+  };
 
   createInput() {
     this.input.type = "checkbox";
     this.input.setAttribute("checked", false);
     this.label.append(this.input);
-  }
+  };
 
   createSpanF() {
     this.spanF.setAttribute("data-on", "Train");
     this.spanF.setAttribute("data-off", "Play");
     this.label.append(this.spanF);
-  }
+  };
 
   createSpanS() {
     this.label.append(this.spanS);
-  }
+  };
 
   chooseMode() {
     this.swither.addEventListener("click", () => {
@@ -39,9 +39,9 @@ class Swither {
         this.input.setAttribute("checked", false);
       } else if (!this.input.checked) {
         this.input.setAttribute("checked", true);
-      }
+      };
     });
-  }
+  };
 
   init() {
     this.createLabel();
@@ -49,8 +49,8 @@ class Swither {
     this.createSpanF();
     this.createSpanS();
     this.chooseMode();
-  }
-}
+  };
+};
 
 export default Swither;
 

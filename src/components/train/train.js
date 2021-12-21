@@ -7,14 +7,14 @@ import { createElem } from "../../helpers/helpFunctions";
 class Train{
   constructor () {
     this.container = document.querySelector('.container');
-    this.swither = document.querySelector('.switch-container');
+    // this.swither = document.querySelector('.switch-container');
     
     this.trainWrapper = createElem('div', 'train-wrapper');
     this.cardsBlock = createElem('div', 'cards-block');
     this.trainWrapper.append(this.cardsBlock) ;
-    this.container.insertBefore(this.trainWrapper, this.swither);
+    // this.container.insertBefore(this.trainWrapper, this.swither);
+    this.container.append(this.trainWrapper)
 
-    this.switherInput = document.querySelector(".switch-input")
   }
   onRenderTrainCards(n) {
     for(let i = 0; i < cards[n].length; i++){

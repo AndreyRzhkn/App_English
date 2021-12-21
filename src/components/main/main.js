@@ -12,7 +12,8 @@ class Main {
   }
   onRenderMainCards() {
     this.swither = document.querySelector(".switch-input");
-    // console.log(this.swither);
+    this.switherContainer = document.querySelector(".switch-container");
+    console.log(this.swither)
 
     for (let i = 0; i < cards[0].length; i++) {
       this.card = createElem("div", "main-card");
@@ -33,10 +34,12 @@ class Main {
           this.mainWrapper.remove();
           this.train = new Train();
           this.train.init(i + 1);
+          this.switherContainer.remove();
         } else {
           this.mainWrapper.remove();
           this.play = new Play();
           this.play.init(i + 1);
+          this.switherContainer.remove();
         }
       });
     }
@@ -44,10 +47,8 @@ class Main {
 
   init() {
     this.onRenderMainCards();
-    // this.renderBlock()
   };
-
-}
+};
 
 
 export default Main;

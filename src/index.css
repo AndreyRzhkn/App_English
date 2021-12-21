@@ -280,6 +280,7 @@ html, body {
 .train-wrapper {
     display: flex;
     flex-direction: column;
+    margin: 0px 300px 0px 0px ;
 }
 .cards-block {
     margin: 0px auto;
@@ -343,6 +344,7 @@ html, body {
 .play-wrapper {
     display: flex;
     flex-direction: column;
+    margin: 0px 300px 0px 0px ;
 }
 .play-cards-block {
     margin: 0px auto;
@@ -359,6 +361,9 @@ html, body {
 }
 .play-card img{
     width: 100%;
+}
+.play-card:disabled{
+  background-color: #F9AFE9;
 }
 .play-button {
     width: 400px;
@@ -385,4 +390,32 @@ html, body {
 }
 .play-button-game img{
   width: 100%;
+}
+.winner-wrapper{
+  width: 1600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pic-block{
+  width: 700px;
+}
+.pic-block img{
+  width: 100%;
+}
+.winner-title{
+  font-size: 30px;
+  margin: 0px 0px 40px 0px ;
+}
+.winner-button{
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid green;
+  background-color: green;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
